@@ -12,6 +12,7 @@
 body {
 text-align:center;
 background-color:white;
+font-family: Quicksand;
 }
 
 .v4 {
@@ -46,11 +47,23 @@ bottom: 15px;
 <br>
 <div>Düşündüğünü kodlayabilen nadir insanlardan.</div>
 <br>
+<div id="variables"></div>
+<br>
 <hr style="border-top: 1px solid rgb(0, 0, 0);">
 <div style="font-size:20px;">Projeler</div>
 <br>
 <div class="container">
       <div class="card-deck mb-3 text-center">
+            
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">NNFirewall</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Layer7 Güvenlik Duvarı</h6>
+    <p class="card-text">PHP diliyle yazılmıştır spam/flood attack larını engellemeyi amaçlamakta.</p>
+    <a href="https://github.com/v4r1able/NNFirewall" target="_blank" class="card-link">Github</a>
+    <a href="https://www.youtube.com/watch?v=0wSH9jhQyC4" target="_blank" class="card-link">Test Video</a>
+  </div>
+</div>
 
 <div class="card">
   <div class="card-body">
@@ -152,4 +165,14 @@ bottom: 15px;
 </body>
 
 <script src='src/jquery.min.js'></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var tarih = Date();
+var variables = array('<?php echo "'+tarih+'"; ?>', 'document.write("'+tarih+'")', 'UPDATE leventemrepacalcomtr SET tarih = "'+tarih+'" where id = 1');
+var random = Math.floor(Math.random() * variables.length);
+setTimeout(function(){
+$("#variables").html(variables[random]);
+}, 300);
+});
+</script>
 </html>
