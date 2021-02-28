@@ -1,0 +1,51 @@
+
+[
+    {
+    "projeicon":"fa fa-globe",
+    "baslik": "Obir.ninja",
+    "aciklama": "Webmaster, linux, seo, güvenlik ve programlama içerikleri. Yazar",
+    "link": "https://obir.ninja"
+    },
+    {
+    "projeicon":"fa fa-globe",
+    "baslik": "Atlantis Roleplay",
+    "aciklama": "Roleplay SA:MP Sunucusu 3RD Party Scripter",
+    "link": "https://atlantis-roleplay.com"
+    },
+    {
+    "projeicon":"fa fa-github",
+    "baslik": "WordPress Google Sıra Bulucu",
+    "aciklama": "WordPress yönetim paneli üzerinden siteye ait anahtar kelimenin sıralamasını gösteren ve anahtar kelimenin sıralamasını listeyen eklenti.",
+    "link": "https://github.com/v4r1able/wordpress-google-sira-bulucu"
+    },
+    {
+    "projeicon":"fa fa-github",
+    "baslik": "WordPress Tema Bulucu",
+    "aciklama": "Belirtilen WordPress sitenin tema bilgilerini gösteren betik.",
+    "link": "https://github.com/v4r1able/wordpress-tema-bilgileri"
+    },
+    {
+    "projeicon":"fa fa-github",
+    "baslik": "Discord Mesaj Rank",
+    "aciklama": "Discord üzerinden her kullanıcının gönderdiği mesaj sayısını json dosyasına kaydeder ve !mesajrank komutu ile kullanıcıya iletir.",
+    "link": "https://github.com/v4r1able/discord-mesaj-rank"
+    },
+    {
+    "projeicon":"fa fa-github",
+    "baslik": "NNFirewall",
+    "aciklama": "[PHP] Layer7 Firewall (Cloudflare + HCaptcha)",
+    "link": "https://github.com/v4r1able/NNFirewall"
+    },
+    {
+    "projeicon":"fa fa-github",
+    "baslik": "Mass Backlink Checker",
+    "aciklama": "PHP ile mass backlink checker http, https, nofollow link kontrol aracı.",
+    "link": "https://github.com/v4r1able/mass-backlink-checker"
+    },
+    {
+    "projeicon":"fa fa-github",
+    "baslik": "Webmaster Tools(beta)",
+    "aciklama": "Beta webmaster tools Whois, meta tag oluşturucu, proxy list ve seo optimizasyon(beta).",
+    "link": "https://link.obir.ninja/seo/"
+    }
+]
