@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Levent Emre PAÇAL">
+        <meta property="og:title" content="leventemrepacal.com.tr" />
+        <meta property="og:description" content="Developer" />
+        <meta property="og:url" content="https://leventemrepacal.com.tr" />
+        <title>leventemrepacal.com.tr</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css">
+        <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&display=swap');
+        html, body {
+            height:100%;
+            background-color:#545c7e;
+            color:white;
+            font-family:"Montserrat";
+        }
+
+        body {
+            display:grid;
+            place-items:center;
+        }
+
+        .baslik {
+            font-size:25px;
+        }
+
+        .v4 {
+            font-size:50px;
+            text-shadow: 5px 2px 1px #000;
+        }
+
+        #rastgele-proje {
+            padding: 20px 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            background:#fff;
+            font-family:"Open Sans";
+        }
+
+        #rastgele-proje i {
+            font-size: 45px;
+            color: #000;
+            margin-right: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #rastgele-proje .proje-baslik {
+            font-size: 20px;
+            font-weight:600;
+            color: #000;
+        }
+
+        #rastgele-proje p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #000;
+            margin-bottom: 0;
+            margin-top: 3px;
+        }
+
+        #rastgele-proje a {
+            background: #000;
+            height: 40px;
+            padding: 0 20px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration:none;
+            margin-top:15px;
+        }
+
+        #rastgele-proje a i {
+            color:white;
+            font-size:15px;
+            margin-right:10px;
+            z-index:0;
+        }
+
+        #alt {
+            font-size:25px;
+            display:flex;
+            flex-direction:column;
+        }
+
+        #alt div {
+            margin-top:15px;
+        }
+
+        .ikonlar a {
+            color:white;
+        }
+
+        .copyright {
+            font-size:15px;
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="orta">
+        <span class="baslik"><i v-bind:class="baslikicon"></i> {{ baslik }}</span>
+        </div>
+
+        <div id="rastgele-proje">
+            <i v-bind:class="projeicon"></i>
+            <div>
+                <div class="proje-baslik">{{ baslik }}</div>
+                <p>{{ aciklama }}</p>
+                <a :href="link" target="_blank"><i v-bind:class="inceleicon"></i> {{ incele }}</a>
+            </div>
+        </div>
+
+        <div id="alt">
+            <div class="bakimda"><i v-bind:class="bakimdaicon"></i> {{ bakimda }}</div>
+            <div class="ikonlar"><i class="icon-php-alt"></i> <i class="icon-laravel"></i> <i class="icon-javascript-alt"></i> <i class="icon-nodejs"></i> <i class="icon-mysql-alt"></i> <i class="icon-html"></i> <i class="icon-css"></i></div>
+            <div class="copyright"><i v-bind:class="copyrighticon"></i> {{ copyright }}</div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        var orta = new Vue({
+            el:"#orta",
+            data: {
+                baslikicon:"fa fa-code",
+                baslik:"leventemrepacal.com.tr",
+                yukleniyor:"Yükleniyor..."
+            }
+        });
+
+        var rastgeleproje = new Vue({
+            el:"#rastgele-proje",
+            data: {
+            projeicon:null,
+            baslik:null,
+            aciklama:null,
+            incele:"İncele",
+            inceleicon:"fa fa-eye"
+            },
+            beforeCreate: function() {
+                axios.get("projeler.json").then( cikti => (
+                    this.random = cikti.data[Math.floor(Math.random()*cikti.data.length)],
+                    this.projeicon = this.random.projeicon,
+                    this.baslik = this.random.baslik,
+                    this.aciklama = this.random.aciklama,
+                    this.link = this.random.link
+                )
+                )
+            }
+        });
+
+        var yukleniyor = new Vue({
+            el:"#alt",
+            data: {
+                bakimdaicon:"fa fa-spinner fa-pulse",
+                bakimda:"Bakımdadır...",
+                copyrighticon:"fa fa-copyright",
+                copyright:new Date().getFullYear()+" Tüm hakları saklıdır."
+            }
+        })
+        </script>
+    </body>
+</html>
